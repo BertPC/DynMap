@@ -1,0 +1,13 @@
+ebertrand@cornysh:~/code/DynMap$ npm install node-avro
+npm WARN excluding symbolic link build/Release/obj.target/avro.node -> /home/erik/tmp/npm-4889/1360981069985-0.33304218598641455/package/node-avro/build/Release/avro.node
+> avro@0.2.0 install /home/erik/node_modules/avro
+> node-gyp rebuild
+
+make: Entering directory `/home/erik/node_modules/avro/build'
+  CXX(target) Release/obj.target/avro/node_avro.o
+  SOLINK_MODULE(target) Release/obj.target/avro.node
+  SOLINK_MODULE(target) Release/obj.target/avro.node: Finished
+  COPY Release/avro.node
+make: Leaving directory `/home/erik/node_modules/avro/build'
+avro@0.2.0 ../../node_modules/avro
+ebertrand@cornysh:~/code/DynMap$

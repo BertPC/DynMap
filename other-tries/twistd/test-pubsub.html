@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  <script type="text/javascript">
+var ws = new WebSocket("ws://localhost:1235/websocket");
+ 
+ws.onmessage = function(evt) {
+  console.log(evt);
+  alert('Another!');
+}
+ 
+ws.onopen = function() {
+  subscribe();
+}
+ 
+ws.onclose = function() {
+  alert('Oops! Lost connection.');
+}
+</script>
+
+  </head>
+  <body>
+    <p><em>Hi!</em></p>
+  </body>
+</html>

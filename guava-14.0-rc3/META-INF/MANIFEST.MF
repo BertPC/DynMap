@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1360789824886
+Build-Jdk: 1.7.0-google-v5
+Built-By: kak
+Bundle-Description: Guava is a suite of core and expanded libraries that
+  include    utility classes, google's collections, io classes, and much
+     much more.    Guava has two code dependencies - javax.annotation   
+  per the JSR-305 spec and javax.inject per the JSR-330 spec.
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Guava: Google Core Libraries for Java
+Bundle-SymbolicName: com.google.guava
+Bundle-Version: 14.0.0.rc3
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.google.common.net;uses:="javax.annotation,com.google
+ .common.base,com.google.common.hash,com.google.common.io,com.google.com
+ mon.primitives,com.google.common.collect";version="14.0.0.rc3",com.goog
+ le.common.collect;uses:="com.google.common.base,javax.annotation,com.go
+ ogle.common.primitives,com.google.common.math";version="14.0.0.rc3",com
+ .google.common.primitives;uses:="javax.annotation,com.google.common.bas
+ e,sun.misc";version="14.0.0.rc3",com.google.common.base;uses:="javax.an
+ notation";version="14.0.0.rc3",com.google.common.cache;uses:="com.googl
+ e.common.collect,com.google.common.util.concurrent,javax.annotation,com
+ .google.common.base,com.google.common.primitives,sun.misc";version="14.
+ 0.0.rc3",com.google.common.eventbus;uses:="com.google.common.collect,co
+ m.google.common.cache,com.google.common.util.concurrent,com.google.comm
+ on.base,com.google.common.reflect,javax.annotation";version="14.0.0.rc3
+ ",com.google.common.util.concurrent;uses:="com.google.common.base,javax
+ .annotation,com.google.common.collect,javax.inject,com.google.common.pr
+ imitives,com.google.common.math";version="14.0.0.rc3",com.google.common
+ .hash;uses:="com.google.common.primitives,com.google.common.base,javax.
+ annotation,com.google.common.math";version="14.0.0.rc3",com.google.comm
+ on.io;uses:="javax.annotation,com.google.common.base,com.google.common.
+ math,com.google.common.hash,com.google.common.collect,com.google.common
+ .primitives";version="14.0.0.rc3",com.google.common.reflect;uses:="java
+ x.annotation,com.google.common.base,com.google.common.collect";version=
+ "14.0.0.rc3",com.google.common.math;uses:="com.google.common.base,com.g
+ oogle.common.primitives,javax.annotation";version="14.0.0.rc3",com.goog
+ le.common.annotations;version="14.0.0.rc3"
+Import-Package: javax.annotation;resolution:=optional,javax.inject;resol
+ ution:=optional,sun.misc;resolution:=optional
+Tool: Bnd-1.50.0

@@ -1,0 +1,47 @@
+07 Feb 2013 14:52:46,288 INFO  [main] (org.apache.flume.lifecycle.LifecycleSupervisor.start:67)  - Starting lifecycle supervisor 1
+07 Feb 2013 14:52:46,291 INFO  [main] (org.apache.flume.node.FlumeNode.start:54)  - Flume node starting - a1
+07 Feb 2013 14:52:46,294 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.start:203)  - Node manager starting
+07 Feb 2013 14:52:46,294 INFO  [lifecycleSupervisor-1-1] (org.apache.flume.conf.file.AbstractFileConfigurationProvider.start:67)  - Configuration provider starting
+07 Feb 2013 14:52:46,298 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.lifecycle.LifecycleSupervisor.start:67)  - Starting lifecycle supervisor 9
+07 Feb 2013 14:52:46,299 INFO  [conf-file-poller-0] (org.apache.flume.conf.file.AbstractFileConfigurationProvider$FileWatcherRunnable.run:195)  - Reloading configuration file:conf/flume.conf
+07 Feb 2013 14:52:46,304 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:998)  - Processing:k1
+07 Feb 2013 14:52:46,304 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:998)  - Processing:k1
+07 Feb 2013 14:52:46,304 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration$AgentConfiguration.addProperty:912)  - Added sinks: k1 Agent: a1
+07 Feb 2013 14:52:46,319 INFO  [conf-file-poller-0] (org.apache.flume.conf.FlumeConfiguration.validateConfiguration:122)  - Post-validation flume configuration contains configuration  for agents: [a1]
+07 Feb 2013 14:52:46,319 INFO  [conf-file-poller-0] (org.apache.flume.conf.properties.PropertiesFileConfigurationProvider.loadChannels:249)  - Creating channels
+07 Feb 2013 14:52:46,324 INFO  [conf-file-poller-0] (org.apache.flume.conf.properties.PropertiesFileConfigurationProvider.loadChannels:273)  - created channel c1
+07 Feb 2013 14:52:46,334 INFO  [conf-file-poller-0] (org.apache.flume.sink.DefaultSinkFactory.create:70)  - Creating instance of sink: k1, type: logger
+07 Feb 2013 14:52:46,336 INFO  [conf-file-poller-0] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.startAllComponents:106)  - Starting new configuration:{ sourceRunners:{r1=EventDrivenSourceRunner: { source:org.apache.flume.source.ExecSource{name:r1,state:IDLE} }} sinkRunners:{k1=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@6c833a2d counterGroup:{ name:null counters:{} } }} channels:{c1=org.apache.flume.channel.MemoryChannel{name: c1}} }
+07 Feb 2013 14:52:46,336 INFO  [conf-file-poller-0] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.startAllComponents:113)  - Starting Channel c1
+07 Feb 2013 14:52:46,383 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.register:89)  - Monitoried counter group for type: CHANNEL, name: c1, registered successfully.
+07 Feb 2013 14:52:46,385 INFO  [lifecycleSupervisor-1-0] (org.apache.flume.instrumentation.MonitoredCounterGroup.start:73)  - Component type: CHANNEL, name: c1 started
+07 Feb 2013 14:52:46,386 INFO  [conf-file-poller-0] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.startAllComponents:141)  - Starting Sink k1
+07 Feb 2013 14:52:46,386 INFO  [conf-file-poller-0] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.startAllComponents:152)  - Starting Source r1
+07 Feb 2013 14:52:46,386 INFO  [lifecycleSupervisor-1-2] (org.apache.flume.source.ExecSource.start:155)  - Exec source starting with command:tail -F /var/log/apache2/access.log | awk -W interactive '{ print $1 }'
+07 Feb 2013 14:52:46,391 INFO  [pool-4-thread-1] (org.apache.flume.source.ExecSource$ExecRunnable.run:307)  - Command [tail -F /var/log/apache2/access.log | awk -W interactive '{ print $1 }'] exited with 1
+07 Feb 2013 14:52:46,392 INFO  [StderrReader-[tail -F /var/log/apache2/access.log | awk -W interactive '{ print $1 }']] (org.apache.flume.source.ExecSource$StderrReader.run:347)  - StderrLogger exiting
+java.io.IOException: Stream closed
+	at java.io.BufferedInputStream.getBufIfOpen(BufferedInputStream.java:162)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:325)
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:283)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:325)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:177)
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	at java.io.BufferedReader.fill(BufferedReader.java:154)
+	at java.io.BufferedReader.readLine(BufferedReader.java:317)
+	at java.io.BufferedReader.readLine(BufferedReader.java:382)
+	at org.apache.flume.source.ExecSource$StderrReader.run(ExecSource.java:341)
+07 Feb 2013 14:53:09,389 INFO  [node-shutdownHook] (org.apache.flume.node.FlumeNode.stop:67)  - Flume node stopping - a1
+07 Feb 2013 14:53:09,390 INFO  [node-shutdownHook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 8
+07 Feb 2013 14:53:09,394 INFO  [node-shutdownHook] (org.apache.flume.conf.file.AbstractFileConfigurationProvider.stop:91)  - Configuration provider stopping
+07 Feb 2013 14:53:09,395 INFO  [node-shutdownHook] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.stop:215)  - Node manager stopping
+07 Feb 2013 14:53:09,396 INFO  [node-shutdownHook] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.stopAllComponents:68)  - Shutting down configuration: { sourceRunners:{r1=EventDrivenSourceRunner: { source:org.apache.flume.source.ExecSource{name:r1,state:START} }} sinkRunners:{k1=SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@6c833a2d counterGroup:{ name:null counters:{runner.backoffs.consecutive=4, runner.backoffs=4} } }} channels:{c1=org.apache.flume.channel.MemoryChannel{name: c1}} }
+07 Feb 2013 14:53:09,397 INFO  [node-shutdownHook] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.stopAllComponents:72)  - Stopping Source r1
+07 Feb 2013 14:53:09,398 INFO  [node-shutdownHook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:156)  - Stopping component: EventDrivenSourceRunner: { source:org.apache.flume.source.ExecSource{name:r1,state:START} }
+07 Feb 2013 14:53:09,398 INFO  [node-shutdownHook] (org.apache.flume.source.ExecSource.stop:178)  - Stopping exec source with command:tail -F /var/log/apache2/access.log | awk -W interactive '{ print $1 }'
+07 Feb 2013 14:53:09,399 INFO  [node-shutdownHook] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.stopAllComponents:82)  - Stopping Sink k1
+07 Feb 2013 14:53:09,400 INFO  [node-shutdownHook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:156)  - Stopping component: SinkRunner: { policy:org.apache.flume.sink.DefaultSinkProcessor@6c833a2d counterGroup:{ name:null counters:{runner.backoffs.consecutive=4, runner.backoffs=4} } }
+07 Feb 2013 14:53:09,401 INFO  [node-shutdownHook] (org.apache.flume.node.nodemanager.DefaultLogicalNodeManager.stopAllComponents:92)  - Stopping Channel c1
+07 Feb 2013 14:53:09,402 INFO  [node-shutdownHook] (org.apache.flume.lifecycle.LifecycleSupervisor.unsupervise:156)  - Stopping component: org.apache.flume.channel.MemoryChannel{name: c1}
+07 Feb 2013 14:53:09,402 INFO  [node-shutdownHook] (org.apache.flume.instrumentation.MonitoredCounterGroup.stop:100)  - Component type: CHANNEL, name: c1 stopped
+07 Feb 2013 14:53:09,403 INFO  [node-shutdownHook] (org.apache.flume.lifecycle.LifecycleSupervisor.stop:78)  - Stopping lifecycle supervisor 8
